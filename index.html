@@ -66,7 +66,13 @@
                     <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
                         <h1 class="text-center" id="maintitle"> Music Note Converter</h1>
                         <p class="text-center">"C D E F G A B" to "Do Re Mi Fa Sol La Si"<br><br>Paste notes here or write in all capitals, and then press convert below.<br><br><br>
-<button id="button" onclick="replace();" class="btn btn-outline btn-lg text-center web" role="button">Convert!</button></p>
+<button id="button" class="button button1 btn btn-outline btn-lg text-center web" onclick="replace();displayDownload()"  onclick="displaySong1()" role="button">CONVERT!</button>
+
+<br>
+
+<div id="paragraph">
+<a href="#download">Download outputted notes</a>
+</div></p>
                     </div><div class="col-12 col-lg-6 col-xl-5 offset-xl-1"><textarea rows="20" cols="100" id="output"></textarea>
     <div class="iphone-mockup">
         <div class="screen"></div>
@@ -100,9 +106,33 @@
         
         document.getElementById("output").value = str;
       }
+      
+      function download(){
+    var a = document.body.appendChild(
+        document.createElement("a")
+    );
+    a.download = "noteconvert.com-output.txt";
+    a.href = "data:text/txt," + document.getElementById("output").value;
+    a.click();
+}
+      
+function displayDownload() {
+  var p = document.getElementById("paragraph");
+  p.style.display = "block";  	 
+}
+
     </script>
 </div>
             </div>
+        </div>
+    </div>
+    <div class="highlight-clean">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center" id="download">Download</h2>
+                <p class="text-center">Click the button below to save output as a .txt file.</p>
+            </div>
+            <div class="buttons"><button onClick="download()" class="btn btn-primary" role="button">download as .txt</button></div>
         </div>
     </div>
     <section id="contact" class="contact bg-primary">
