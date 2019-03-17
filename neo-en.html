@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Music Note Converter | About</title>
+    <title>Music Note Converter | Do Re Mi to C D E</title>
     <meta name="keywords" content="solfège, solfege, solfeggio, sol-fa, solfa, solfeo, convert, music, note, c, d, e, f, g, a, b, do, re, mi, fa, sol, la, si, chord, guitar, tabs, lyrics">
     <meta name="theme-color" content="#184e8e">
     <meta property="og:image" content="/assets/img/apple-icon.png">
@@ -60,8 +60,94 @@
                     </div>
                 </div>
             </nav>
-        </div>
+            <div class="container hero">
+                <div class="row">
+                    <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+                        <h1 class="text-center" id="maintitle">Neo-Latin to English</h1><div class="dropdown btn-name-div">
+  <button class="btn btn-secondary dropdown-toggle btn-name" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Change
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="/">Neo-Latin</a>
+    <a class="dropdown-item" href="/de/en-de">German</a>
+  </div>
+</div>
+                        <p class="text-center">"Do Re Mi Fa Sol La Si" to "C D E F G A B"<br><br>Paste notes here or write capitalised, and then press convert below.<br><br>Accepted: #, b / Not accepted:&nbsp;♯,&nbsp;<strong>♭</strong><br><br>
+<button id="button" class="button button1 btn btn-outline btn-lg text-center web" onclick="replace();displayDownload()"  role="button">CONVERT!</button>
+
+<br>
+
+<div id="paragraph" onclick="displayDownload2()">
+<a href="#download">Download outputted notes</a>
+</div></p>
+                    </div><div class="col-12 col-lg-6 col-xl-5 offset-xl-1"><textarea rows="20" cols="100" id="output"></textarea>
+    <div class="iphone-mockup">
+        <div class="screen"></div>
     </div>
+</div>
+
+  <script>
+      function replace(){
+        var str = document.getElementById("output").value;
+                
+        var mapObj = {
+           Do:"C",
+           Re:"D",
+           Mi:"E",
+           Fa:"F",
+           Sol:"G",
+           La:"A",
+           Si:"B",
+          
+           bemolle:"♭",
+           diesis:"#" 
+           
+};
+        str = str.replace(/Do|Re|Mi|Fa|Sol|La|Si|bemolle|diesis/g, function(matched){
+          return mapObj[matched];
+});           
+        
+        document.getElementById("output").value = str;
+      }
+      
+       function download(){
+    var a = document.body.appendChild(
+        document.createElement("a")
+    );
+    a.download = "noteconvert.com-output.txt";
+    a.href = "data:text/txt," + document.getElementById("output").value;
+    a.click();
+}
+      
+function displayDownload() {
+  var p = document.getElementById("paragraph");
+  p.style.display = "block";  	 
+}
+      
+      function displayDownload2() {
+  var p = document.getElementById("paragraph2");
+  p.style.display = "block";  	 
+}
+    </script>
+</div>
+            </div>
+        </div>
+    </div><div class="highlight-clean" id="paragraph2">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center" id="download">Download</h2>
+            <p class="text-center">Click the button below to save output as a .txt file.</p>
+        </div>
+        <div class="buttons"><button class="btn btn-primary" onClick="download()">download as .txt</button></div>
+    </div>
+</div>
+    <section id="contact" class="contact bg-primary">
+        <div class="container">
+            <h2><span id="about">What is this website about?</span></h2>
+            <p class="text-center">This purpose of this website is to easily convert musical notes from C D E F G A B&nbsp;to Do Re Mi Fa Sol La Si.<br><br>Technically speaking, this is the solfège naming convention (or solfeggio, sol-fa, solfa, solfeo). It is used in&nbsp;most
+                countries in the world,&nbsp;including Italy, Portugal, Spain, France, Poland, Romania, most Latin American countries, Greece, Bulgaria, Turkey, Russia, and all the Arabic-speaking or Persian-speaking countries.<br><br></p>
+        </div>
+    </section>
     <div class="article-clean">
         <div class="container">
             <div class="row">
@@ -85,15 +171,7 @@
                 </div>
             </div>
         </div>
-    </div><div class="highlight-clean" id="paragraph2">
-    <div class="container">
-        <div class="intro">
-            <h2 class="text-center" id="download">Download</h2>
-            <p class="text-center">Click the button below to save output as a .txt file.</p>
-        </div>
-        <div class="buttons"><button class="btn btn-primary" onClick="download()">download as .txt</button></div>
     </div>
-</div>
     <div class="footer-basic">
         <footer>
             <ul class="list-inline">

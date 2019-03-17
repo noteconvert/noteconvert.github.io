@@ -42,17 +42,6 @@
           enable_page_level_ads: true
      });
 </script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136078330-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-136078330-1');
-</script>
-
 </head>
 
 <body id="page-top">
@@ -63,8 +52,8 @@
                         data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navcol-1">
                         <ul class="nav navbar-nav">
-                            <li class="nav-item" role="presentation"><a class="nav-link active" href="/">"C D E" to "Do Re Mi"</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link active" href="/doremi">"Do Re Mi" to "C D E"</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link active" href="/">English to Neo-Latin</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link active" href="/neo-en">Neo-Latin to English</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link active" href="about">About</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link active" href="contact">Contact</a></li>
                         </ul>
@@ -74,8 +63,16 @@
             <div class="container hero">
                 <div class="row">
                     <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
-                        <h1 class="text-center" id="maintitle"> Music Note Converter</h1>
-                        <p class="text-center">"C D E F G A B" to "Do Re Mi Fa Sol La Si"<br><br>Paste notes here or write in all capitals, and then press convert below.<br><br><br>
+                        <h1 class="text-center" id="maintitle"> English to Neo-Latin</h1><div class="dropdown btn-name-div">
+  <button class="btn btn-secondary dropdown-toggle btn-name" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Change
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="/">Neo-Latin</a>
+    <a class="dropdown-item" href="/de/en-de">German</a>
+  </div>
+</div>
+                        <p class="text-center">"C D E F G A B" to "Do Re Mi Fa Sol La Si"<br><br>Paste notes here or write in all capitals, and then press convert below.<br><br>Accepted: #, b / Not accepted:&nbsp;♯,&nbsp;<strong>♭</strong><br><br>
 <button id="button" class="button button1 btn btn-outline btn-lg text-center web" onclick="replace();displayDownload()"  role="button">CONVERT!</button>
 
 <br>
@@ -103,6 +100,7 @@
            B:"Si",
           
            b:" bemolle ",
+           "♭":" bemolle ",
            "#":" diesis ",
           
            maj7:"7",
@@ -110,7 +108,7 @@
           
            
 };
-        str = str.replace(/C|D|E|F|G|A|B|b|#|maj7|add/g, function(matched){
+        str = str.replace(/C|D|E|F|G|A|B|b|♭|#|maj7|add/g, function(matched){
           return mapObj[matched];
 });           
         
