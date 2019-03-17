@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Music Note Converter German to English</title>
+    <title>Music Note Converter English to German</title>
     <meta name="keywords" content="solfège, solfege, solfeggio, sol-fa, solfa, solfeo, convert, music, note, c, d, e, f, g, a, b, do, re, mi, fa, sol, la, si, chord, guitar, tabs, lyrics">
     <meta name="theme-color" content="#184e8e">
     <meta property="og:image" content="/assets/img/apple-icon.png">
     <meta property="og:type" content="website">
-    <meta name="description" content="Convert Notes from C D E F G A H to C D E F G A B">
+    <meta name="description" content="Convert Notes from C D E F G A B to C D E F G A H">
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
@@ -52,8 +52,8 @@
                         data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navcol-1">
                         <ul class="nav navbar-nav">
-                            <li class="nav-item" role="presentation"><a class="nav-link active" href="/de/en-de">English to German</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link active" href="/de/de-en">German to English</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link active" href="/en-de">English to German</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link active" href="/de-en">German to English</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link active" href="about">About</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link active" href="contact">Contact</a></li>
                         </ul>
@@ -63,7 +63,7 @@
             <div class="container hero">
                 <div class="row">
                     <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
-                        <h1 class="text-center" id="maintitle">German to English</h1><div class="dropdown btn-name-div">
+                        <h1 class="text-center" id="maintitle"> English to German</h1><div class="dropdown btn-name-div">
   <button class="btn btn-secondary dropdown-toggle btn-name" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
    Change
   </button>
@@ -72,7 +72,7 @@
     <a class="dropdown-item" href="/de/en-de">German</a>
   </div>
 </div>
-                        <p class="text-center">"C D E F G A H" to "C D E F G A B"<br><br>Paste notes here or write in all capitals, and then press convert below.<br><br>Accepted: #, b / Not accepted:&nbsp;♯,&nbsp;<strong>♭</strong><br><br>
+                        <p class="text-center">"C D E F G A B" to "C D E F G A H"<br><br>Paste notes here or write in all capitals, and then press convert below.<br><br>Accepted: #, b / Not accepted:&nbsp;♯,&nbsp;<strong>♭</strong><br><br>
 <button id="button" class="button button1 btn btn-outline btn-lg text-center web" onclick="replace();displayDownload()"  role="button">CONVERT!</button>
 
 <br>
@@ -91,22 +91,22 @@
         var str = document.getElementById("output").value;
                 
         var mapObj = {
-           Cis:"C#",
-           Dis:"D#",
-           Fis:"F#",
-           Gis:"G#",
-           Ais:"A#",
+           "C#":"Cis",
+           "D#":"Dis",
+           "F#":"Fis",
+           "G#":"Gis",
+           "A#":"Ais",
 
-           Des:"Db",
-           Es:"Eb",
-           Ges:"Gb",
-           As:"Ab",
-           B:"Bb",
+           Db:"Des",
+           Eb:"Es",
+           Gb:"Ges",
+           Ab:"As",
+           Bb:"B",
            
-           H:"B"
+           B:"H"
                       
 };
-        str = str.replace(/Cis|Dis|Fis|Gis|Ais|Des|Es|Ges|As|B|H/g, function(matched){
+        str = str.replace(/C#|\bB\b|Bb|C#|D#|F#|G#|A#|Db|Eb|Gb|Ab/g, function(matched){
           return mapObj[matched];
 });           
         
