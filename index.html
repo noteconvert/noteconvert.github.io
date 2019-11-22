@@ -85,7 +85,7 @@
     <a class="dropdown-item" href="/en-de">German</a>
   </div>
 </div>
-                        <p class="text-center">"C D E F G A B" to "Do Re Mi Fa Sol La Si"<br><br>Paste notes here or write in all capitals, and then press convert below.<br><br>Accepted: #, b / Not accepted:&nbsp;♯,&nbsp;<strong>♭</strong><br><br>
+                        <p class="text-center">"C D E F G A B" to "Do Re Mi Fa Sol La Si"<br><br>Write in all capitals, and then press convert below.<br><br><strong>Update</strong>: All symbols accepted and chords simplified!<br><br>
 <button id="button" class="button button1 btn btn-outline btn-lg text-center web" onclick="replace();displayDownload()"  role="button">CONVERT!</button>
 
 <br>
@@ -103,27 +103,21 @@
       function replace(){
         var str = document.getElementById("output").value;
                 
-        var mapObj = {
-           C:"Do",
-           D:"Re",
-           E:"Mi",
-           F:"Fa",
-           G:"Sol",
-           A:"La",
-           B:"Si",
-          
-           b:" bemolle ",
-           "♭":" bemolle ",
-           "#":" diesis ",
-          
-           maj7:"7",
-           add:" add"
-          
-           
-};
-        str = str.replace(/C|D|E|F|G|A|B|b|♭|#|maj7|add/g, function(matched){
-          return mapObj[matched];
-});           
+var mapObj = {
+        C: 'Do',
+        D: 'Re',
+        E: "Mi",
+        F: "Fa",
+        G: "Sol",
+        A: "La",
+        B: "Si",
+       
+        maj: "",
+        aug: "+"
+    };
+       str = str.replace(/C|D|E|F|G|A|B|maj|aug/g, function (matched) {
+        return mapObj[matched];
+    });       
         
         document.getElementById("output").value = str;
       }

@@ -85,7 +85,7 @@
     <a class="dropdown-item" href="/en-de">German</a>
   </div>
 </div>
-                        <p class="text-center">"Do Re Mi Fa Sol La Si" to "C D E F G A B"<br><br>Paste notes here or write capitalised, and then press convert below.<br><br>Accepted: #, b / Not accepted:&nbsp;♯,&nbsp;<strong>♭</strong><br><br>
+                        <p class="text-center">"Do Re Mi Fa Sol La Si" to "C D E F G A B"<br><br>Write in all capitals, and then press convert below.<br><br><strong>Update</strong>: All symbols accepted and chords simplified!<br><br>
 <button id="button" class="button button1 btn btn-outline btn-lg text-center web" onclick="replace();displayDownload()"  role="button">CONVERT!</button>
 
 <br>
@@ -109,14 +109,15 @@
            Mi:"E",
            Fa:"F",
            Sol:"G",
-           La:"A",
+          La:"A",
            Si:"B",
-          
-           bemolle:"♭",
-           diesis:"#" 
+        Mag: "maj",
+            mag: "maj",
+            Maggiore: "maj",
+            maggiore: "maj"
            
 };
-        str = str.replace(/Do|Re|Mi|Fa|Sol|La|Si|bemolle|diesis/g, function(matched){
+        str = str.replace(/Do|Re|Mi|Fa|Sol|La|Si|Maggiore|maggiore|Mag|mag/g, function(matched){
           return mapObj[matched];
 });           
         
