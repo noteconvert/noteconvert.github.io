@@ -111,13 +111,11 @@
            Sol:"G",
           La:"A",
            Si:"B",
-        Mag: "maj",
             mag: "maj",
-            Maggiore: "maj",
             maggiore: "maj"
            
 };
-        str = str.replace(/Do|Re|Mi|Fa|Sol|La|Si|Maggiore|maggiore|Mag|mag/g, function(matched){
+        str = str.replace(/mag(giore)?|Do((?=add|b|m|aug|dim)|(?![a-z]))|Re((?=add|b|m|aug|dim)|(?![a-z]))|Mi((?=add|b|m|aug|dim)|(?![a-z]))|Fa((?=add|b|m|aug|dim)|(?![a-z]))|Sol((?=add|b|m|aug|dim)|(?![a-z]))|La((?=add|b|m|aug|dim)|(?![a-z]))|Si((?=add|b|m|aug|dim)|(?![a-z]))/gm, function(matched){
           return mapObj[matched];
 });           
         
