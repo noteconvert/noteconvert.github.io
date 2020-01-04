@@ -85,7 +85,7 @@
     <a class="dropdown-item" href="/en-de">German</a>
   </div>
 </div>
-                        <p class="text-center">"C D E F G A B" to "Do Re Mi Fa Sol La Si"<br><br>Write in all capitals, and then press convert below.<br><br><strong>Update</strong>: All symbols accepted and chords simplified!<br><br>
+                        <p class="text-center">"C D E F G A B" to "Do Re Mi Fa Sol La Si"<br><br>Write in all capitals, and then press convert below.<br><br><strong>Update</strong>: Can now input chords + lyrics!<br><br>
 <button id="button" class="button button1 btn btn-outline btn-lg text-center web" onclick="replace();displayDownload()"  role="button">CONVERT!</button>
 
 <br>
@@ -115,7 +115,7 @@ var mapObj = {
         maj: "",
         aug: "+"
     };
-       str = str.replace(/C|D|E|F|G|A|B|maj|aug/g, function (matched) {
+       str = str.replace(/maj(or)?|aug|C((?=add|b|m|aug|dim)|(?![a-z]))|D((?=add|b|m|aug|dim)|(?![a-z]))|E((?=add|b|m|aug|dim)|(?![a-z]))|F((?=add|b|m|aug|dim)|(?![a-z]))|G((?=add|b|m|aug|dim)|(?![a-z]))|A((?=add|b|m|aug|dim)|(?![a-z]))|B((?=add|b|m|aug|dim)|(?![a-z]))/gm, function (matched) {
         return mapObj[matched];
     });       
         
