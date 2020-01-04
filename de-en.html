@@ -85,7 +85,7 @@
     <a class="dropdown-item" href="/en-de">German</a>
   </div>
 </div>
-                        <p class="text-center">"C D E F G A H" to "C D E F G A B"<br><br>Paste notes here or write in all capitals, and then press convert below.<br><br>Accepted: #, b / Not accepted:&nbsp;♯,&nbsp;<strong>♭</strong><br><br>
+                        <p class="text-center">"C D E F G A H" to "C D E F G A B"<br><br>Use capitalization and then press convert below.<br>e.g. H, Cis, Es<br><br><strong>Update</strong>: Can now input chords + lyrics!<br><br>
 <button id="button" class="button button1 btn btn-outline btn-lg text-center web" onclick="replace();displayDownload()"  role="button">CONVERT!</button>
 
 <br>
@@ -114,12 +114,11 @@
            Es:"Eb",
            Ges:"Gb",
            As:"Ab",
-           B:"Bb",
-           
+           B:"Bb",           
            H:"B"
                       
 };
-        str = str.replace(/Cis|Dis|Fis|Gis|Ais|Des|Es|Ges|As|B|H/g, function(matched){
+        str = str.replace(/B((?=add|m|aug|dim)|(?![a-z]))|H((?=add|b|m|aug|dim)|(?![a-z]))|Cis((?=add|m|aug|dim)|(?![a-z]))|Dis((?=add|m|aug|dim)|(?![a-z]))|Fis((?=add|m|aug|dim)|(?![a-z]))|Gis((?=add|m|aug|dim)|(?![a-z]))|Ais((?=add|m|aug|dim)|(?![a-z]))|Des((?=add|m|aug|dim)|(?![a-z]))|Es((?=add|m|aug|dim)|(?![a-z]))|Ges((?=add|m|aug|dim)|(?![a-z]))|As((?=add|m|aug|dim)|(?![a-z]))/gm, function(matched){
           return mapObj[matched];
 });           
         
