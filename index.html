@@ -114,9 +114,11 @@ var mapObj = {
        
         maj: "",
     major: "",
-        aug: "+"
+        aug: "+",
+    Verse: "Strofa",
+    Chorus: "Ritornello"
     };
-       str = str.replace(/maj(or)?|aug|C((?=add|b|m|aug|dim)|(?![a-z]))|D((?=add|b|m|aug|dim)|(?![a-z]))|E((?=add|b|m|aug|dim)|(?![a-z]))|F((?=add|b|m|aug|dim)|(?![a-z]))|G((?=add|b|m|aug|dim)|(?![a-z]))|A((?=add|b|m|aug|dim)|(?![a-z]))|B((?=add|b|m|aug|dim)|(?![a-z]))/gm, function (matched) {
+       str = str.replace(/maj(or)?|aug|Verse(?![a-z])|Chorus(?![a-z])|C((?=add|b|m|aug|dim)|(?![a-z]))|D((?=add|b|m|aug|dim)|(?![a-z]))|E((?=add|b|m|aug|dim)|(?![a-z]))|F((?=add|b|m|aug|dim)|(?![a-z]))|G((?=add|b|m|aug|dim)|(?![a-z]))|A((?=add|b|m|aug|dim)|(?![a-z]))|B((?=add|b|m|aug|dim)|(?![a-z]))/gm, function (matched) {
         return mapObj[matched];
     });       
         
