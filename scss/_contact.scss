@@ -1,0 +1,45 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
+    justify-content: space-evenly;
+    height: 300px;
+    width: 500px;
+    margin-top: 50px;
+    text-align: left;
+
+    input,
+    textarea {
+        width: 100%;
+        max-width: 100% !important;
+        margin-top: 7px;
+    }
+
+    input {
+        height: 30px;
+    }
+
+    textarea {
+        height: 100px;
+    }
+
+    label {
+        font-size: 1.1em;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    form {
+        width: 95%;
+
+        input {
+            padding: 0;
+
+        }
+
+        textarea {
+            max-width: 100% !important;
+        }
+    }
+}

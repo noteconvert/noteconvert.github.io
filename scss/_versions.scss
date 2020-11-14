@@ -1,0 +1,27 @@
+body.versions {
+    .container {
+        justify-content: center;
+
+        .inner-container {
+            padding: 0;
+
+            width: 430px;
+
+            h3,
+            ul {
+                align-self: flex-start;
+            }
+
+            ul {
+                list-style: square;
+                text-align: left;
+                padding: 10px;
+                margin-left: 15px;
+
+                li {
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}

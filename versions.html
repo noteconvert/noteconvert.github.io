@@ -23,7 +23,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png" />
 
-    <!-- Schema.org markup for Google+ -->
+        <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="NoteConvert">
     <meta itemprop="description" content="Convert Musical Notes from C D E to Do Re Mi">
     <meta itemprop="image" content="https://noteconvert.com/apple-touch-icon.png">
@@ -37,19 +37,18 @@
     <meta name="keywords"
         content="solfège, solfege, solfeggio, sol-fa, solfa, solfeo, convert, music, note, c, d, e, f, g, a, b, do, re, mi, fa, sol, la, si, chord, guitar, tabs, lyrics">
     <meta name="theme-color" content="#184e8e">
-    <meta property="og:image" content="https://noteconvert.com/apple-touch-icon.png">
+    <meta property="og:image" content="apple-touch-icon.png">
     <meta property="og:type" content="website">
-    <meta name="description"
-        content="Convert Musical Notes from C D E to Do Re Mi, from English to Neo-Latin and other conventions.">
+    <meta name="description" content="Convert Notes from C D E F G A B to Do Re Mi Fa Sol La Si">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://use.typekit.net/kyj4lzx.css">
     <link rel="stylesheet" href="styles/main.min.css">
-    <title>Music Note Converter | NoteConvert | C D E to Do Re Mi</title>
+    <title>What's new | NoteConvert | C D E to Do Re Mi</title>
 </head>
 
-<body class="index">
+<body class="versions">
 
     <nav>
         <a class="brand" href="/">NoteConvert</a>
@@ -70,40 +69,32 @@
 
     <main class="container" id="main">
         <div class="inner-container">
-            <select name="convention" id="convention" title="Click here to change convention"
-                onchange="changeConvention()">
-                <option value="english-neo">English to Neo-Latin</option>
-                <option value="neo-english">Neo-Latin to English</option>
-                <option value="english-german">English to German</option>
-                <option value="german-english">German to English</option>
-                <option value="neo-german">Neo-Latin to German</option>
-                <option value="german-neo">German to Neo-Latin</option>
-            </select>
+            <h1>Version History</h1>
 
-            <p>
-                <span id="convention-desc">"C D E F G A B" to "Do Re Mi Fa Sol La Si"</span>
-                <br><br>
-                Use capitalization and then press convert below.
-                <br>
-                e.g. B Eb A#add9
-                <br><br>
-                Also accepts chords + lyrics (BETA)
-            </p>
-
-            <textarea draggable="false" style="resize:none" rows="20" cols="100" id="output"
-                aria-label="outputted notes"></textarea>
-
-            <div class="btns">
-                <button class="lg" onclick="convert()">Convert</button>
-                <span id="download-btn" onclick="download()">Download as .txt</span>
-            </div>
-
+            <h3>v2.0</h3>
+            <ul>
+                <li>Completely new design and font</li>
+                <li>Removed Bootstrap, and built from the ground up to be super fast</li>
+                <li>Can change conventions without leaving the page</li>
+                <li>Added Neo-Latin to German (and the reverse)</li>
+                <li>Lyrics/chords still in beta</li>
+            </ul>
+            <h3>v1.5</h3>
+            <ul>
+                <li>Can now put lyrics/chords (BETA)</li>
+                <li>Added the German convention</li>
+            </ul>
+            <h3>v1.0</h3>
+            <ul>
+                <li>Launched!</li>
+            </ul>
         </div>
     </main>
 
     <footer>
         <ul>
             <li><a href="https://paypal.ashley.how" target="_blank" rel="noopener noreferrer">Buy me a coffee ☕</a></li>
+
             <li><a href="privacy">Privacy Policy</a></li>
             <li><a href="https://ashley.how" target="_blank" rel="noopener noreferrer">Ashley Howard © 2020</a></li>
         </ul>

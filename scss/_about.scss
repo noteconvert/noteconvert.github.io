@@ -1,0 +1,48 @@
+body.about {
+
+    height: 100%;
+    width: 100%;
+
+    .container {
+
+        &#main {
+            justify-content: center;
+
+            .inner-container {
+                width: 700px;
+                text-align: left;
+                padding: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    body.about {
+        .inner-container {
+            align-items: flex-start !important;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    body.about {
+        overflow: scroll;
+
+        .container {
+            padding-top: 45px;
+            height: auto;
+            padding-bottom: 60px;
+
+            .inner-container {
+                height: auto;
+            }
+        }
+
+        footer {
+            position: unset;
+            margin-top: -40px;
+        }
+    }
+}
